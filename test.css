@@ -1,74 +1,26 @@
-.wrapper-inputs[data-v-97653432] {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    width: 100%
+.social[data-v-440cba9e] {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 2.5rem);
+    justify-content: space-between
 }
 
-.wrapper-inputs textarea[data-v-97653432] {
-    min-height: 12.2rem;
-    resize: none
+.social a[data-v-440cba9e]:hover {
+    opacity: 1;
+    transition: .3s
 }
 
-.wrapper-inputs span[data-v-97653432] {
-    background: #fff;
-    bottom: -.8rem;
-    color: #8a8a93;
-    font-size: 1.1rem;
-    left: .8rem;
-    padding: 0 .4rem;
-    position: relative;
-    transition: all .09s linear
+.social a:hover svg path[data-v-440cba9e] {
+    fill: #f42a3e;
+    transition: .3s
 }
 
-.wrapper-inputs .input[data-v-97653432] {
-    border: 1px solid #cacace;
-    box-sizing: border-box;
-    font-size: 1.11rem;
-    padding: .8rem 1.2rem;
-    width: 100%
+.social a:hover svg circle[data-v-440cba9e] {
+    stroke: #f42a3e;
+    transition: .3s
 }
 
-.wrapper-inputs .input[data-v-97653432]:hover {
-    border: 1px solid #8a8a93
-}
-
-.wrapper-inputs .Check-input[data-v-97653432] {
-    bottom: -.8rem !important
-}
-
-.wrapper-inputs .error-border[data-v-97653432] {
-    border: 1px solid red
-}
-
-.wrapper-inputs .wrapper-errors-alert[data-v-97653432] {
-    pointer-events: none;
-    position: absolute;
-    right: 0;
-    top: -1.6rem;
-    z-index: 9001
-}
-
-.wrapper-inputs .error-alert[data-v-97653432] {
-    background: #f42a3e;
-    box-shadow: 0 4px 20px rgba(9, 12, 31, .1);
-    padding: .55rem;
-    pointer-events: none;
-    position: relative
-}
-
-.wrapper-inputs .error-alert p[data-v-97653432] {
-    color: #fff;
-    font-size: 1.1rem;
-    line-height: 125%
-}
-
-.wrapper-inputs .error-alert[data-v-97653432]:after {
-    border: 1rem solid transparent;
-    border-top-color: #f42a3e;
-    bottom: -1.5rem;
-    content: "";
-    position: absolute;
-    right: 1rem
+.social a[data-v-440cba9e]:not(:hover),
+.social a:not(:hover) svg circle[data-v-440cba9e],
+.social a:not(:hover) svg path[data-v-440cba9e] {
+    transition: .3s
 }
