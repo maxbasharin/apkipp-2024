@@ -11,14 +11,17 @@ $(document).ready(function () {
     /* Бургер навигация */
     $('.header__menu-opener').click(function () {
         $('.main-menu').fadeToggle(200);
+        $('.navigation').css('position', 'static');
         $("body").toggleClass("overflow-hidden");
-        
+
         if ($("body").hasClass("overflow-hidden")) {
             $('body').css('overflow', 'hidden');
         } else {
             $('body').css('overflow', 'auto');
         }
     });
+
+
 
     /* Модальное окно popup */
     $('.popup-btn').click(function () {
@@ -53,6 +56,6 @@ $(document).ready(function () {
         window.open('https://api.whatsapp.com/send?phone=79613084929', '_blank');
     });
 
-    
+
 
 });
