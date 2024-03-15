@@ -24,12 +24,12 @@ h2 {
     color: #292c3d;
     font-size: 3rem;
     font-weight: 700;
-    line-height: 3.333rem;
+    line-height: 3.3rem;
     position: relative;
 }
 
 h2 {
-    margin-bottom: 2.73rem;
+    margin-bottom: 2.7rem;
 }
 
 h1::before {
@@ -64,11 +64,14 @@ h6 {
     font-size: 1.1rem;
 }
 
-.pinkColor {
-    color: #fd3c76;
+h2>span {
     font-size: 3rem;
     font-weight: 700;
-    line-height: 3.333rem;
+    line-height: 3.3rem;
+}
+
+.pinkColor {
+    color: #fd3c76;
 }
 
 
@@ -129,7 +132,7 @@ h6 {
     z-index: 1000;
 }
 
-.main-menu {
+.navigation__section {
     display: none;
     bottom: 0;
     left: 0;
@@ -139,7 +142,7 @@ h6 {
     right: 0;
     top: 0;
     width: 100vw;
-    z-index: 1000;
+    z-index: 900;
 }
 
 .logo-icon {
@@ -160,7 +163,7 @@ h6 {
     border-bottom: 1px solid #ededed;
     display: flex;
     flex-direction: row;
-    font-size: 2.89rem;
+    font-size: 2.9rem;
     justify-content: space-between;
     position: relative;
     z-index: 100;
@@ -256,7 +259,7 @@ h6 {
 
 .header__nav li a {
     text-decoration: none;
-    font-size: 1.125rem;
+    font-size: 1.1rem;
     font-weight: 500;
     transition: .3s;
     align-items: center;
@@ -540,7 +543,7 @@ input:focus {
 }
 
 .home-page__left {
-    width: 26.38rem;
+    width: 26.3rem;
 }
 
 .home-page__left-wrapper {
@@ -616,7 +619,7 @@ input:focus {
     line-height: 130%;
     text-transform: uppercase;
     transition: .35s;
-    width: 8.41rem;
+    width: 8.4rem;
 }
 
 .home-page__logo-item:hover p {
@@ -681,7 +684,7 @@ input:focus {
 }
 
 .home-page__block-wrapper a svg {
-    height: 0.694rem;
+    height: 0.6rem;
     transition: .35s;
     width: 0.48rem;
 }
@@ -953,6 +956,11 @@ span {
 }
 
 /* Таблица семинаров */
+
+.seminars__wrapper {
+    overflow: auto;
+}
+
 .table {
     width: 100%;
     border: none;
@@ -1054,10 +1062,21 @@ footer .container {
 }
 
 .column-head {
+    display: flex;
+    align-items: center;
     cursor: pointer;
     height: 3.8rem;
     width: 14.16rem;
     margin-bottom: 3rem;
+}
+
+.footer-logo__name {
+    color: #fff;
+    font-size: 0.8rem;
+    line-height: normal;
+    font-weight: 700;
+    width: 15rem;
+    margin-left: 1rem;
 }
 
 .column-head p {
@@ -1110,9 +1129,9 @@ footer .container {
 
 .footer-column__main ul li {
     font-size: 1.38rem;
-    line-height: 1.944rem;
+    line-height: 2rem;
     font-weight: 300;
-    margin-bottom: 2.91rem;
+    margin-bottom: 2.9rem;
     width: 100%;
     color: #fff;
 }
@@ -1126,7 +1145,7 @@ footer .container {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding: 6.6rem 0 6rem 6.94rem;
+    padding: 6.6rem 0 6rem 6.9rem;
     width: 24%;
 }
 
@@ -1154,7 +1173,7 @@ footer .container {
     justify-content: space-between;
     padding: 2.2rem 0 !important;
     margin: 0 auto;
-    width: 86.11rem;
+    width: 86rem;
 }
 
 .footer-policy * {
@@ -1211,7 +1230,7 @@ footer .container {
 .subscription-form {
     display: flex;
     flex-direction: column;
-    width: 27.7rem;
+    width: 27rem;
 }
 
 .subscription-input {
@@ -1221,7 +1240,7 @@ footer .container {
     background-color: rgba(255, 255, 255, 0.2);
     box-sizing: border-box;
     font-size: 1.11rem;
-    padding: 1.15rem 1.73rem;
+    padding: 1.15rem 1.7rem;
     position: relative;
     z-index: 100;
     margin-bottom: 0.85rem;
@@ -1286,9 +1305,9 @@ footer .container {
 }
 
 /* Отзывы об Академии */
-
 .reviews-wrapper {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     gap: 40px;
     margin-bottom: 3rem;
@@ -1297,8 +1316,11 @@ footer .container {
 .reviews-column {
     display: flex;
     flex-direction: column;
-    width: 27.1rem;
     gap: 30px;
+}
+
+.reviews-column__item {
+    width: 27.1rem;
 }
 
 .reviews-column__item iframe {
@@ -1315,7 +1337,7 @@ footer .container {
 }
 
 .reviews-wrapper__youtube .reviews-column__item {
-    width: 27.1rem;
+    width: 26rem;
 }
 
 .reviews-wrapper__youtube .reviews-column__item iframe {
@@ -1334,11 +1356,21 @@ footer .container {
     }
 }
 
+@media screen and (max-width: 997px) {
+    .reviews-column {
+        flex-direction: row;
+    }
+
+    .reviews-column__item {
+        width: 26rem;
+    }
+}
+
 @media screen and (min-width: 1200px) and (max-width: 1919px) {
     html {
         font-size: .85vw;
     }
-   
+
 }
 
 .home-page__adaptive {
@@ -1346,6 +1378,17 @@ footer .container {
 }
 
 @media screen and (max-width:768px) {
+
+    h2::before {
+        height: 1.5rem;
+        width: 1rem;
+        left: -1.2rem;
+    }
+
+    .container {
+        padding: 2.7rem 0 !important;
+        width: 90% !important;
+    }
 
     /* Шапка сайта */
     .header__nav {
@@ -1374,16 +1417,21 @@ footer .container {
 
     .main-menu__wrapper {
         display: flex;
-    flex-direction: column;
+        flex-direction: column;
     }
 
     .main-menu__column {
         padding: 0 1.45rem;
-    width: 100%;
+        width: 100%;
     }
 
     .main-menu__column:first-child {
         padding-top: 1.45rem;
+    }
+
+    .popup-form__wrapper {
+        margin-bottom: 4rem;
+        width: 23.88rem;
     }
 
     /* Главная страница */
@@ -1483,12 +1531,86 @@ footer .container {
     .home-page__container .social {
         position: static;
     }
+
+    /* Подвал сайта */
+    footer .container {
+        flex-direction: column;
+        width: 90% !important;
+        padding: 0 !important;
+    }
+
+    .footer-column {
+        border: none;
+        padding: 0;
+        width: 100%;
+        border-bottom: 0.069rem solid hsla(0, 0%, 100%, .2);
+    }
+
+    .footer-column__form {
+        width: 100%;
+        padding: 2.3rem 0 2.7rem;
+    }
+
+    .subscription-form {
+        width: 100%;
+    }
+
+    footer .footer-row__bottom {
+        flex-direction: column-reverse;
+        width: 90% !important;
+        padding: 2.2rem 0 !important;
+    }
+
+    .footer-policy p {
+        width: 100%;
+    }
+
+    .footer-social {
+        margin-bottom: 2rem;
+    }
+
+    /* Отзывы */
+    .reviews-column {
+        flex-wrap: wrap;
+    }
+
+    .reviews-column__yandex {
+        width: 100%;
+    }
+
+    .reviews-column__item {
+        width: 22rem;
+    }
+
+    .reviews-wrapper__youtube .reviews-column__item {
+        width: 22rem;
+    }
+
 }
 
 @media screen and (max-width:480px) {
 
     html {
         font-size: 4vw;
+    }
+
+    h1,
+    h2 {
+        font-size: 1.7rem;
+        line-height: 2rem;
+    }
+
+    h1::before {
+        display: none;
+    }
+
+    h2::before {
+        display: none;
+    }
+
+    h2>span {
+        font-size: 1.7rem;
+        line-height: 2rem;
     }
 
     /* Шапка сайта */
@@ -1520,8 +1642,38 @@ footer .container {
         width: 4.3rem;
     }
 
-    /* Главная страница */
+   .popup-form{
+    width: 100%;
+   }
 
+   .popup-title {
+    margin-bottom: 1.7rem;
+   }
+
+   .custom-checkbox+label {
+    font-size: 0.8rem;
+   }
+
+   .popup-content {
+    padding: 2rem;
+   }
+
+   .popup-form__wrapper {
+    width: 100%;
+    margin-bottom: 0;
+   }
+
+   .popupcheckbox {
+    margin: 1rem 0;
+    flex-direction: column;
+   }
+
+   .checkbox {
+    width: 100%;
+    margin-bottom: 1rem;
+   }
+
+    /* Главная страница */
     .home-page {
         background-size: auto;
         background-repeat: repeat;
@@ -1541,20 +1693,20 @@ footer .container {
     }
 
     .home-page__block {
-        height: 11.805rem;
+        height: 11.8rem;
         width: 100%;
         background-size: cover !important;
     }
 
     .home-page__block-wrapper--column {
-        height: 11.805rem;
+        height: 11.8rem;
         padding: 1.5rem;
         width: 100%;
     }
 
     .home-page__block-wrapper--row {
         flex-direction: column;
-        height: 11.805rem;
+        height: 11.8rem;
         padding: 1.5rem;
         width: 100%;
         border-radius: 10px;
@@ -1569,7 +1721,7 @@ footer .container {
     }
 
     .home-page__block-wrapper--row .line {
-        height: 0.0694rem;
+        height: 0.07rem;
         width: 100%;
     }
 
@@ -1587,5 +1739,61 @@ footer .container {
 
     .home-page__logos {
         margin-top: 2rem;
+    }
+
+    /* Подвал сайта */
+    .footer-row__head {
+        flex-direction: column;
+    }
+
+    .footer-row__head .column-head {
+        margin: 2rem 0 0;
+        width: 100%;
+    }
+
+    .footer-column__main {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        height: auto;
+        padding: 2.2rem 0 0;
+    }
+
+    .footer-column__main ul {
+        width: 100%;
+    }
+
+    .footer-column__main ul li {
+        margin-bottom: 2rem;
+    }
+
+    .footer-column__form p {
+        width: 100%;
+    }
+
+    /* Семинары */
+    .table {
+        margin-bottom: 4.5rem;
+    }
+
+    .table tbody td {
+        font-size: 1rem;
+        padding: 1.2rem 1rem;
+    }
+
+      /* Отзывы */
+    .reviews-column__item {
+        width: 100%;
+    }
+
+    .reviews-wrapper__youtube .reviews-column__item {
+        width: 100%;
+    }
+
+    .reviews-column__item iframe {
+        height: 12rem;
+    }
+
+    .reviews-wrapper__youtube .reviews-column__item iframe {
+        height: 12rem;
     }
 }
