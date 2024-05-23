@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-  // Отложения загрузка
+  // Отложенная загрузка
   const observer = lozad();
   observer.observe();
   lozad('.lozad', {
@@ -175,7 +175,20 @@ $(document).ready(function () {
     },
   });
 
-
+  // Слайдер баннеров на каталоге
+  var swiperProgramBanner = new Swiper(".program__banner-slider", {
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
 
   // Навигация скролл по странице
   $(".refers a").on("click", function (event) {
