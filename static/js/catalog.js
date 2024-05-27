@@ -9,10 +9,10 @@ function declOfNum(n, text_forms) {
     return text_forms[2];
 }
 
-function setCountFound(count){
-	courseword = declOfNum(count, ['курс', 'курса', 'курсов']);
-    $('.js-direction-filter-box-form-count').text(count +' '+ courseword);
-}
+// function setCountFound(count){
+// 	courseword = declOfNum(count, ['курс', 'курса', 'курсов']);
+//     $('.js-direction-filter-box-form-count').text(count +' '+ courseword);
+// }
 
 function generateItemsPagination(count, limit, page) {
     $('.js-items-box-block-pagination-list').remove();
@@ -197,25 +197,25 @@ function generateItem(data){
 
 
 
-function getItems(url, page, filter) {
-    data = filter + '&page='+page+'&direction='+direction;
-    $.ajax({
-        url: url,
-        type: 'POST',
-        dataType: 'json',
-        data: data,
-        success: function(request){
-            $('.js-items-box-block').html('');
+// function getItems(url, page, filter) {
+//     data = filter + '&page='+page+'&direction='+direction;
+//     $.ajax({
+//         url: url,
+//         type: 'POST',
+//         dataType: 'json',
+//         data: data,
+//         success: function(request){
+//             $('.js-items-box-block').html('');
             
-            $.each(request.items, function(i, data) {
-                $('.js-items-box-block').append(generateItem(data));
-            });
+//             $.each(request.items, function(i, data) {
+//                 $('.js-items-box-block').append(generateItem(data));
+//             });
             
-            generateItemsPagination(request.count, request.limit, request.page)
-            setCountFound(request.count);
-        }
-    });
-}
+//             generateItemsPagination(request.count, request.limit, request.page)
+//             setCountFound(request.count);
+//         }
+//     });
+// }
 
 function generateFilterHours(hours){
     let hoursFilter = `
@@ -466,42 +466,43 @@ $(document).ready(function() {
         getItems(url, 1, data);
     });
     
-    $(document).on('change', '.js-direction-filter-box-form input, .js-direction-filter-box-form select', function(event) {
+    // $(document).on('change', '.js-direction-filter-box-form input, .js-direction-filter-box-form select', function(event) {
 		
-		if($('.custom-select__option.custom-select__option--value').text().indexOf('Выберите') == 0) $('.resetspec').hide();
-		else $('.resetspec').show();
+	// 	if($('.custom-select__option.custom-select__option--value').text().indexOf('Выберите') == 0) $('.resetspec').hide();
+	// 	else $('.resetspec').show();
 
-        let data = $('.js-direction-filter-box-form').serialize();
-        data    += '&only_count=true&direction='+direction;
+    //     let data = $('.js-direction-filter-box-form').serialize();
+    //     data    += '&only_count=true&direction='+direction;
         
-        $.ajax({
-            url: url,
-            type: 'POST',
-            dataType: 'json',
-            data: data,
-            success: function(request){
-                setCountFound(request.count);
-            }
-        });
-    });   
+    //     $.ajax({
+    //         url: url,
+    //         type: 'POST',
+    //         dataType: 'json',
+    //         data: data,
+    //         success: function(request){
+    //             setCountFound(request.count);
+    //         }
+    //     });
+    // });   
 
-    $(document).on('click', '.resetspec', function(event) {
-		$(this).hide();
-		$('.custom-select__option').each(function() {
-			if($(this).text().indexOf('Выберите') == 0) $(this).trigger('click');
-		});	
-		$('.direction-filter-box__info-btn-submit').trigger('click');
-	});
-	// Мобильная версия
-	$(document).on('click', '.js-direction-filter-mobile-btn', function(event) {
-		$('.js-direction-filter-box').toggle('slow');
-	});
+    // $(document).on('click', '.resetspec', function(event) {
+	// 	$(this).hide();
+	// 	$('.custom-select__option').each(function() {
+	// 		if($(this).text().indexOf('Выберите') == 0) $(this).trigger('click');
+	// 	});	
+	// 	$('.direction-filter-box__info-btn-submit').trigger('click');
+	// });
 
-	var windowsize = $(window).width();
-	if (windowsize < 991) {
-		$('.direction-filter-box__data-block').append('<button type="submit" class="main-btn direction-filter-box__info-btn-submit">'+$('.direction-filter-box__info-btn-submit').html()+'</button>');
-		$('.direction-filter-box__info-btn-submit').css('margin-top','20px')
-		$('.js-direction-filter-box-inner').css('margin-bottom','20px')
-	}
+	// // Мобильная версия
+	// $(document).on('click', '.js-direction-filter-mobile-btn', function(event) {
+	// 	$('.js-direction-filter-box').toggle('slow');
+	// });
+
+	// var windowsize = $(window).width();
+	// if (windowsize < 991) {
+	// 	$('.direction-filter-box__data-block').append('<button type="submit" class="main-btn direction-filter-box__info-btn-submit">'+$('.direction-filter-box__info-btn-submit').html()+'</button>');
+	// 	$('.direction-filter-box__info-btn-submit').css('margin-top','20px')
+	// 	$('.js-direction-filter-box-inner').css('margin-bottom','20px')
+	// }
 	
 });

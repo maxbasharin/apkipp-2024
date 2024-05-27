@@ -277,3 +277,39 @@ $(document).ready(function () {
         $('.apply').removeClass('active');
     }
 });
+
+// popup Фильтр на мобилках 
+$(".js-direction-filter-mobile-btn").click(function () {
+  $(".program__body-widget").fadeToggle(200);
+  $("body").toggleClass("overflow-hidden");
+
+  if ($("body").hasClass("overflow-hidden")) {
+    $("body").css("overflow", "hidden");
+  } else {
+    $("body").css("overflow", "auto");
+  }
+});
+
+$(".js-direction-filter-mobile-btn-close").click(function () {
+  $("body").css("overflow", "auto");
+  $(this).parents(".program__body-widget").fadeToggle(200);
+  return false;
+});
+
+// popup Направления на мобилках 
+$(".filter-direction-button").click(function () {
+  $(".program__body-popup-direction").fadeToggle(200);
+  $("body").toggleClass("overflow-hidden");
+
+  if ($("body").hasClass("overflow-hidden")) {
+    $("body").css("overflow", "hidden");
+  } else {
+    $("body").css("overflow", "auto");
+  }
+});
+
+$(".js-program__body-popup-direction-close").click(function () {
+  $("body").css("overflow", "auto");
+  $(this).parents(".program__body-popup-direction").fadeToggle(200);
+  return false;
+});

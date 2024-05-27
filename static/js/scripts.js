@@ -252,40 +252,7 @@ $(document).scroll(function() {  // OR  $(window).scroll(function() {
 $(window).resize(function() {
 
     controlCategoriesShowHide();
-    controlReviewCarousel();
-    controlCertificationCarousel();
+  
 });
  
-function controlCertificationCarousel(){
-    let slider = $('.js-certification-methods-items');
-    let options = {
-        loop: false,
-        nav: false,
-        items: 1,
-    };
-
-    if ($(window).width() < 767) {
-        startCertificationCarousel(slider, options);
-    } else {
-        stopCertificationCarousel(slider);
-    }
-}
-
-
-
-
-function controlReviewCarousel(){
-    let slider = $('.js-review-process-items');
-    let options = {
-        loop: false,
-        nav: false,
-        items: 1,
-    };
-
-    if ($(window).width() < 575) {
-        startReviewCarousel(slider, options);
-    } else {
-        stopReviewCarousel(slider);
-    }
-}
 
